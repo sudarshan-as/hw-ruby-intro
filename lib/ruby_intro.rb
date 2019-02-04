@@ -3,7 +3,7 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  # initialise sum to 0
 	sum = 0
 	if arr.length == 0
 		sum = 0
@@ -20,17 +20,17 @@ def max_2_sum arr
 	sum = 0
 	if arr.length == 0
 		sum = 0
-	elsif arr.length == 1
+	elsif arr.length == 1		#sum of one element array is the array element
 		sum = arr[0]
 	else
-		arr.sort!
-		sum = arr[arr.length-1] + arr[arr.length-2]
+		arr.sort!							#sorts array in ascending order
+		sum = arr[arr.length-1] + arr[arr.length-2]		#last 2 elements will be the maximum (ascending order)
 	end
 	return sum
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  # if array has 1 element or less, can't find sum of 2 elements
 	if arr.length <= 1
 		return false
 	else
@@ -39,7 +39,7 @@ def sum_to_n? arr, n
 				if arr[i] + arr[j] == n
 					return true
 				else
-					check = false
+					check = false		#return check when no 2 numbers add up to n
 				end		#if sum is n
 			end			#for j
 		end				#for i
@@ -50,15 +50,14 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  # Concatenating with +
 	return "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
 	if s.length == 0
 		check = false
-	elsif s.match(/\A[b-df-hj-np-tv-z]/i)
+	elsif s.match(/\A[b-df-hj-np-tv-z]/i) 	#check beginning letter across case insensitive consonant ranges
 		check = true
 	else
 		check = false
@@ -71,7 +70,7 @@ def binary_multiple_of_4? s
 	if s.length == 0 || s.match(/[^10]/)
 		check = false
 	else
-		if s.match(/^[10]*[00]$/) || (s==0)
+		if s.match(/^[10]*[00]$/) || (s==0)		#check if binary number ends with 00
 			check = true
 		else
 			check = false
